@@ -1,0 +1,62 @@
+name: AWS Network Firewall Update Request
+description: Network Firewall Rules Update
+title: "[Network Firewall Rules Update [Ingress / Egress] ]:"
+labels: ["Rules Update"]
+assignees:
+  - octocat
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this Firewall Rules Update form!
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: dropdown
+    id: incoming
+    attributes:
+      label: Select VPC
+      description: Which VPC you want to Update The Firewall Rules
+      options:
+        - Ingress (Default)
+        - Egress (Edge)
+    validations:
+      required: true
+  - type: dropdown
+    id: rulename
+    attributes:
+      label: Provide Rule Type
+      description: Which Firewall Rule you want to change
+      options:
+        - Stateless (Default)
+        - Statefull (Edge)
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Provide Details About Firewall Rules Update List
+      description: Also tell us about Ingress or Egress Rules
+      placeholder: Tell us what you see!
+      value: "Rules Update"
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
